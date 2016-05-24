@@ -1,3 +1,120 @@
-.oxmod-oxmjs-flip{
-/* CSS */
- }
+html,
+body,
+.layout {
+  height: 100%;
+}
+.oxmod-oxmjs-flip {
+  /* CSS */
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  /* CSS */
+}
+.oxmod-oxmjs-flip .flip-pages {
+  display: flex;
+}
+.oxmod-oxmjs-flip .flip-page {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+}
+.oxmod-oxmjs-flip .icon {
+  text-align: center;
+  padding: 5% 0;
+  width: 25%;
+  text-decoration: none;
+  color: #666;
+}
+.oxmod-oxmjs-flip .icon:first-child {
+  border-left-style: none;
+}
+.oxmod-oxmjs-flip .icon:hover {
+  background-color: #f1f1f1;
+}
+.oxmod-oxmjs-flip .icon img {
+  width: 50px;
+  border-radius: 20%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.oxmod-oxmjs-flip .dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: rgba(100, 100, 100, 0.8);
+  margin: 2px;
+}
+.oxmod-oxmjs-flip .index-dots {
+  height: 20px;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 10px;
+}
+.oxmod-oxmjs-flip .flip-window {
+  transition: all .2s;
+}
+.oxmod-oxmjs-flip [data-on="1"] .dot:nth-child(1) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="1"] .flip-window {
+  transform: translate(0%, 0);
+}
+.oxmod-oxmjs-flip [data-on="2"] .dot:nth-child(2) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="2"] .flip-window {
+  transform: translate(-100%, 0);
+}
+.oxmod-oxmjs-flip [data-on="3"] .dot:nth-child(3) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="3"] .flip-window {
+  transform: translate(-200%, 0);
+}
+.oxmod-oxmjs-flip [data-on="4"] .dot:nth-child(4) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="4"] .flip-window {
+  transform: translate(-300%, 0);
+}
+.oxmod-oxmjs-flip [data-on="5"] .dot:nth-child(5) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="5"] .flip-window {
+  transform: translate(-400%, 0);
+}
+.oxmod-oxmjs-flip [data-on="6"] .dot:nth-child(6) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="6"] .flip-window {
+  transform: translate(-500%, 0);
+}
+.oxmod-oxmjs-flip [data-on="7"] .dot:nth-child(7) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="7"] .flip-window {
+  transform: translate(-600%, 0);
+}
+.oxmod-oxmjs-flip [data-on="8"] .dot:nth-child(8) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="8"] .flip-window {
+  transform: translate(-700%, 0);
+}
+.oxmod-oxmjs-flip [data-on="9"] .dot:nth-child(9) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="9"] .flip-window {
+  transform: translate(-800%, 0);
+}
+.oxmod-oxmjs-flip [data-on="10"] .dot:nth-child(10) {
+  background-color: rgba(255, 100, 0, 0.8);
+}
+.oxmod-oxmjs-flip [data-on="10"] .flip-window {
+  transform: translate(-900%, 0);
+}

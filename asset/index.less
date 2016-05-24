@@ -1,0 +1,77 @@
+html,body,.layout{
+  height:100%;
+}
+.oxmod-oxmjs-flip{
+  /* CSS */
+  width:100%;
+  height: 100%;
+  overflow: hidden;
+  .flip-pages {
+    display: flex;
+  }
+  /* CSS */
+  .flip-page{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%;
+    align-items:flex-start;
+  }
+  .icon{
+    text-align: center;
+    padding:5% 0;
+    width:25%;
+
+    &:first-child{
+      border-left-style: none;
+    }
+    &:hover{
+      background-color: #f1f1f1;
+    }
+    img{
+      width:50px;
+      border-radius: 20%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size:cover;
+
+    }
+    text-decoration: none;
+    color:#666;
+  }
+
+
+  .dot{
+    width:10px;
+    height:10px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: rgba(100,100,100,.8);
+    margin:2px;
+  }
+
+  .index-dots{
+    height:20px;
+    text-align: center;
+    position: fixed;
+    width:100%;
+    left:0;
+    bottom:10px;
+  }
+  .flip-window{
+    transition: all .2s;
+  }
+  .loop(@n, @i: 1) when (@i =< @n) {
+
+    [data-on="@{i}"]{
+      .dot:nth-child(@{i}){
+        background-color: rgba(255,100,0,.8);
+      }
+      .flip-window{
+        transform: translate((@i * -100% + 100%),0);
+      }
+    }
+    .loop(@n,(@i + 1));    // next iteration
+  }
+
+  .loop(10);
+}
