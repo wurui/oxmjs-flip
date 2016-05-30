@@ -7,7 +7,7 @@ define(['zepto'],function(undef){
     }
     $log.html(s)
   };
-  var bindEvent=function(){
+  var bindEvent=function(conf){
     var startX,startY,deltaX=0,deltaY= 0,
         that=this,
         wrap=this.wrap,
@@ -19,10 +19,11 @@ define(['zepto'],function(undef){
             case 'touchstart':
                 startX=touch0.clientX;
                 startY=touch0.clientY;
+                wrap.children('.'+conf.classes.flipWindow).removeClass(conf.classes.transition)
                   break
             case 'touchend':
                 //console.log('de',deltaX)
-                wrap.children('.flip-window').removeAttr('style')
+                wrap.children('.'+conf.classes.flipWindow).removeAttr('style').addClass(conf.classes.transition)
                 if(Math.abs(deltaX)>screenWidth/2){
                  // console.log('gogogo',deltaX)
                   that.go(-deltaX);
@@ -36,14 +37,10 @@ define(['zepto'],function(undef){
             case 'touchmove':
                 deltaX=touch0.clientX-startX;
                 deltaY=touch0.clientY-startY;
-//console.log('point',that.currentIndex -  deltaX/screenWidth)
-              var percent= -100*(that.currentIndex -  deltaX/screenWidth)//2 为阻尼系数
-              //console.log('precent',percent)
-
-              wrap.children('.flip-window').css({
+              var percent= -100*(that.currentIndex -  deltaX/screenWidth);
+              wrap.children('.'+conf.classes.transition).css({
                 transform:'translate('+percent+'%, 0)'
-              })
-                //console.log('moving',deltaX,deltaY)
+              });
               break
           }
 
@@ -54,19 +51,25 @@ define(['zepto'],function(undef){
     //console.log('w',screenWidth)
   };
   return {
-    init:function(mod){
+    init:function(mod,conf){
 
-      var wrap=this.wrap= mod.children('div'),
+        var conf= $.extend({
+            classes:{
+                flipPage:'flip-page',
+                flipWindow:'flip-window',
+                transition:'transition'
+            }
+
+        },conf||{})
+        var wrap=this.wrap= mod.children('div'),
           that=this;
-      this.count=wrap.find('.flip-page').length;
-/*
-      $('body').on('swipeLeft swipeRight',function(e){
+        this.count=wrap.find('.'+conf.classes.flipPage).length;
+        /*
+        $('body').on('swipeLeft swipeRight',function(e){
 
         that.go(e.type =='swipeLeft'?1:-1)
-      });*/
-      bindEvent.call(this);
-
-
+        });*/
+        bindEvent.call(this,conf);
 
     },
     go:function(direction){

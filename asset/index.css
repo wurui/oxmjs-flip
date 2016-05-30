@@ -55,7 +55,7 @@ body,
   left: 0;
   bottom: 10px;
 }
-.oxmod-oxmjs-flip .flip-window {
+.oxmod-oxmjs-flip .transition {
   transition: all .2s;
 }
 .oxmod-oxmjs-flip [data-on="1"] .dot:nth-child(1) {
