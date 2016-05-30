@@ -118,3 +118,6 @@ body,
 .oxmod-oxmjs-flip [data-on="10"] .flip-window {
   transform: translate(-900%, 0);
 }
+::-webkit-scrollbar {
+  width: 0px;
+}
