@@ -6,15 +6,17 @@ define(['zepto'],function(undef){
             that=this,
             wrap=this.wrap,
 
-            screenWidth= $('body').on('touchstart touchend touchmove',function(e){
+            screenWidth= $('body').on('touchend touchmove',function(e){
               //console.log('touch', e.type,e)
               var touch0= e.touches[0];
               switch (e.type){
+                  /*
                 case 'touchstart':
                     startX=touch0.clientX;
                     startY=touch0.clientY;
                     wrap.children('.'+conf.classes.flipWindow).removeClass(conf.classes.transition)
                       break
+                      */
                 case 'touchend':
                     //console.log('de',deltaX)
                     wrap.children('.'+conf.classes.flipWindow).removeAttr('style').addClass(conf.classes.transition)
@@ -39,6 +41,14 @@ define(['zepto'],function(undef){
 
                 return false
         }).width();
+
+        wrap.on('touchstart',function(e){
+            var touch0= e.touches[0];
+            startX=touch0.clientX;
+            startY=touch0.clientY;
+            wrap.children('.'+conf.classes.flipWindow).removeClass(conf.classes.transition)
+
+        })
     };
 
     var constructor=function(conf){

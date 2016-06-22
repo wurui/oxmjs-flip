@@ -10,6 +10,9 @@ body,
   overflow: hidden;
   /* CSS */
 }
+.oxmod-oxmjs-flip > div {
+  height: 100%;
+}
 .oxmod-oxmjs-flip .flip-pages {
   display: flex;
 }
