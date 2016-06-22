@@ -29,8 +29,9 @@ define(['zepto'],function(undef){
                 case 'touchmove':
                     deltaX=touch0.clientX-startX;
                     deltaY=touch0.clientY-startY;
+                    //console.log('deltaX',deltaX)
                   var percent= -100*(that.currentIndex -  deltaX/screenWidth);
-                  wrap.children('.'+conf.classes.transition).css({
+                  wrap.children('.'+conf.classes.flipWindow).css({
                     transform:'translate('+percent+'%, 0)'
                   });
                   break
