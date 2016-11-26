@@ -20,7 +20,7 @@
                                 <a class="icon" target="_blank" href="{href}" >
 
                                     <img style="background-image:url({icon});"
-                                         src="//momofox.com/uploads/img/a8876120-17db-11e6-b734-95ffd38867b8.png" />
+                                         src="http://static.openxsl.com/img/blank.png" />
                                     <br/>
                                     <xsl:value-of select="title"/>
                                 </a>
