@@ -3,6 +3,7 @@ define(['zepto'], function (undef) {
 
     var bindEvent = function (conf) {
         var startX, startY, deltaX = 0, deltaY = 0,
+            startTS,
             that = this,
             wrap = this.wrap,
 
@@ -23,9 +24,17 @@ define(['zepto'], function (undef) {
                     case 'touchend':
                         //console.log('de',deltaX)
                         wrap.children('.' + conf.classes.flipWindow).removeAttr('style').addClass(conf.classes.transition)
+
                         if (Math.abs(deltaX) > screenWidth / 2) {
                             // console.log('gogogo',deltaX)
                             that.go(-deltaX);
+
+                        }else{
+                            var speed=Math.abs(deltaX)/((new Date)-startTS);
+                            if(speed > 0.15){
+                                that.go(-deltaX);
+                            }
+
 
                         }
                         deltaX = 0;
@@ -51,6 +60,7 @@ define(['zepto'], function (undef) {
             var touch0 = e.touches[0];
             startX = touch0.clientX;
             startY = touch0.clientY;
+            startTS=new Date();
             wrap.children('.' + conf.classes.flipWindow).removeClass(conf.classes.transition)
 
         })

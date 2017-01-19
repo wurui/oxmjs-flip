@@ -10,25 +10,25 @@
       <head>
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no"/>
         <title>oxmjs-flip Demo</title>
-        <link rel="stylesheet" type="text/css" href="https://1.openxsl.com/css/ea.css" />
-        <link rel="stylesheet" type="text/css" href="asset/index.css" />
-        <script src="https://1.openxsl.com/js/require.js"></script>
+          <link rel="stylesheet" type="text/css" href="https://oxm1.cc/css/ea.css" />
+          <link rel="stylesheet" type="text/css" href="asset/index.css" />
+          <script src="https://oxm1.cc/js/require.js"></script>
       </head>
       <body>
         <div class="layout">
           <xsl:call-template name="oxmjs-flip" />
         </div>
-        <script><![CDATA[
+          <script><![CDATA[
           require.config({
-          paths: {
-          zepto: 'https://1.openxsl.com/js/zepto.min',
-          mustache: 'https://1.openxsl.com/js/mustache',
-          oxm:'http://oss.openxsl.com/oxm'
-          }
+            paths: {
+              zepto: 'https://oxm1.cc/js/zepto.min',
+              mustache: 'https://oxm1.cc/js/mustache',
+              oxjs:'https://oxm1.cc/js/oxjs'
+            },
+            packages:[{name:"oxm",location:'https://oxm1.cc/oxm'}]
           });
-          require(['zepto','asset/index'],function(undefine,Mod){
+          require(['zepto','oxjs','asset/index'],function(undefine,oxjs,Mod){
           Mod && Mod.init && Mod.init($('.J_OXMod'));
-
           })
         ]]></script>
       </body>
