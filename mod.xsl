@@ -20,7 +20,7 @@
                                 <a class="icon" target="_blank" href="{href}" >
 
                                     <img style="background-image:url({icon});"
-                                         src="http://static.openxsl.com/img/blank.png" />
+                                         src="//a.oxm1.cc/img/blank.png" />
                                     <br/>
                                     <xsl:value-of select="title"/>
                                 </a>
