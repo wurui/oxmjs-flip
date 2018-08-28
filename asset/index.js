@@ -73,7 +73,10 @@ define(['zepto'], function (undef) {
         this.count = conf.wrap.find('.' + conf.classes.flipPage).length;
 
 
-        bindEvent.call(this, conf);
+        if(conf.manual){
+            bindEvent.call(this, conf);
+        }
+        
 
     };
     constructor.prototype = {
